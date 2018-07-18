@@ -1,6 +1,5 @@
 require 'active_record/connection_adapters/postgresql_adapter'
 require 'ipaddr'
-require 'pg_array_parser'
 
 module ActiveRecord
   module ConnectionAdapters
@@ -9,7 +8,6 @@ module ActiveRecord
     end
 
     class PostgreSQLColumn
-      include PgArrayParser
       attr_accessor :array
 
       def initialize_with_extended_types(name, default, sql_type = nil, null = true)
